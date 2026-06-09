@@ -30,7 +30,6 @@ body {
 
 a { color: inherit; text-decoration: none; }
 
-/* ── UTILITY ── */
 .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
 .section    { padding: var(--section-pad) 0; }
 .section-label {
@@ -69,7 +68,7 @@ a { color: inherit; text-decoration: none; }
 .btn-ghost { background: transparent; color: var(--white); border-color: rgba(255,255,255,0.5); }
 .btn-ghost:hover { border-color: var(--cyan); color: var(--cyan); transform: translateY(-1px); }
 
-/* ── HEADER / NAV ── */
+/* ── HEADER ── */
 .site-header {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -118,15 +117,16 @@ a { color: inherit; text-decoration: none; }
   position: relative;
   overflow: hidden;
 }
+/* 좌측만 어둡게, 우측 이미지 선명하게 */
 .hero::before {
   content: '';
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to right,
-    rgba(8,18,34,0.90) 0%,
-    rgba(8,18,34,0.72) 40%,
-    rgba(8,18,34,0.22) 65%,
+    rgba(8,18,34,0.88) 0%,
+    rgba(8,18,34,0.65) 38%,
+    rgba(8,18,34,0.18) 62%,
     transparent 100%
   );
   z-index: 0;
@@ -156,7 +156,7 @@ a { color: inherit; text-decoration: none; }
   color: var(--white);
   margin-bottom: 28px;
   text-transform: uppercase;
-  text-shadow: 0 2px 24px rgba(0,0,0,0.6);
+  text-shadow: 0 2px 24px rgba(0,0,0,0.5);
   max-width: 700px;
 }
 .hero-accent { color: var(--cyan); }
@@ -166,11 +166,11 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 40px;
   max-width: 480px;
   line-height: 1.7;
-  text-shadow: 0 1px 10px rgba(0,0,0,0.7);
+  text-shadow: 0 1px 10px rgba(0,0,0,0.6);
 }
 .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
 
-/* ── HERO STATS — HOVER 효과 ── */
+/* ── STATS HOVER ── */
 .hero-stats {
   max-width: var(--max-w);
   margin: 60px auto 0;
@@ -206,13 +206,8 @@ a { color: inherit; text-decoration: none; }
   transform: scaleX(0);
   transition: transform 0.3s ease;
 }
-.stat:hover {
-  background: rgba(0,201,212,0.12);
-  transform: translateY(-4px);
-}
-.stat:hover::before {
-  transform: scaleX(1);
-}
+.stat:hover { background: rgba(0,201,212,0.14); transform: translateY(-4px); }
+.stat:hover::before { transform: scaleX(1); }
 .stat-num {
   font-family: var(--font-display);
   font-size: 44px;
@@ -221,10 +216,7 @@ a { color: inherit; text-decoration: none; }
   line-height: 1;
   transition: color 0.3s, transform 0.3s;
 }
-.stat:hover .stat-num {
-  color: var(--white);
-  transform: scale(1.08);
-}
+.stat:hover .stat-num { color: var(--white); transform: scale(1.08); }
 .stat-label {
   font-size: 12px;
   text-transform: uppercase;
@@ -232,11 +224,9 @@ a { color: inherit; text-decoration: none; }
   color: var(--muted);
   transition: color 0.3s;
 }
-.stat:hover .stat-label {
-  color: var(--cyan);
-}
+.stat:hover .stat-label { color: var(--cyan); }
 
-/* ── ABOUT ── */
+/* ── ABOUT — 배경 이미지 선명하게 ── */
 .about {
   background: url('../images/about-bg.jpg') center/cover no-repeat;
   position: relative;
@@ -245,29 +235,29 @@ a { color: inherit; text-decoration: none; }
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(10,22,40,0.88);
+  background: rgba(8,18,34,0.60);  /* 60%만 — 이미지 보임 */
   z-index: 0;
 }
 .about .container { position: relative; z-index: 1; }
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
-.about-text p { color: rgba(232,237,243,0.85); margin-bottom: 20px; font-size: 16px; }
+.about-text p { color: rgba(232,237,243,0.90); margin-bottom: 20px; font-size: 16px; }
 .about-certs { display: flex; flex-direction: column; gap: 20px; }
 .cert-item {
   display: flex; gap: 16px; align-items: flex-start;
   padding: 20px;
-  background: rgba(10,22,40,0.7);
-  border: 1px solid rgba(0,201,212,0.15);
+  background: rgba(8,18,34,0.55);
+  border: 1px solid rgba(0,201,212,0.20);
   border-radius: 4px;
   transition: border-color 0.25s, background 0.25s;
 }
-.cert-item:hover { border-color: var(--cyan); background: rgba(0,201,212,0.06); }
-.cert-track { border-color: rgba(242,101,34,0.25); }
-.cert-track:hover { border-color: var(--orange); background: rgba(242,101,34,0.06); }
+.cert-item:hover { border-color: var(--cyan); background: rgba(0,201,212,0.10); }
+.cert-track { border-color: rgba(242,101,34,0.30); }
+.cert-track:hover { border-color: var(--orange); background: rgba(242,101,34,0.08); }
 .cert-icon { font-size: 20px; color: var(--cyan); flex-shrink: 0; margin-top: 2px; }
 .cert-item strong { display: block; font-size: 14px; font-weight: 600; color: var(--white); margin-bottom: 2px; }
 .cert-item span { font-size: 13px; color: var(--muted); }
 
-/* ── SERVICES ── */
+/* ── SERVICES — 배경 이미지 선명하게 ── */
 .services {
   background: url('../images/service-bg.jpg') center/cover no-repeat;
   position: relative;
@@ -276,7 +266,7 @@ a { color: inherit; text-decoration: none; }
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(10,22,40,0.92);
+  background: rgba(8,18,34,0.70);  /* 70%만 */
   z-index: 0;
 }
 .services .container { position: relative; z-index: 1; }
@@ -287,16 +277,15 @@ a { color: inherit; text-decoration: none; }
   border-radius: 4px; overflow: hidden;
 }
 .service-card {
-  background: rgba(17,34,64,0.95);
+  background: rgba(8,18,34,0.70);
   padding: 32px 24px;
   display: flex; flex-direction: column; gap: 10px;
   transition: background 0.25s, transform 0.25s;
-  position: relative;
 }
-.service-card:hover { background: rgba(0,201,212,0.10); transform: translateY(-3px); }
+.service-card:hover { background: rgba(0,201,212,0.12); transform: translateY(-3px); }
 .service-num { font-family: var(--font-display); font-size: 13px; letter-spacing: 0.12em; color: var(--cyan); font-weight: 600; }
 .service-card h3 { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--white); line-height: 1.2; }
-.service-card p { font-size: 13px; color: var(--muted); line-height: 1.55; flex: 1; }
+.service-card p { font-size: 13px; color: rgba(232,237,243,0.75); line-height: 1.55; flex: 1; }
 .card-arrow { font-size: 18px; color: var(--orange); transition: transform 0.25s; }
 .service-card:hover .card-arrow { transform: translateX(5px); }
 
@@ -336,22 +325,37 @@ a { color: inherit; text-decoration: none; }
 .footer-col a:hover { color: var(--cyan); }
 .footer-bottom { text-align: center; padding: 24px 0; font-size: 12px; color: rgba(255,255,255,0.3); }
 
-/* ── SERVICE DETAIL PAGES ── */
+/* ── SERVICE DETAIL PAGES — 배경 이미지 선명하게 ── */
 .page-hero {
   padding: 140px 24px 80px;
-  background: var(--navy) center/cover no-repeat;
-  position: relative; overflow: hidden;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  position: relative;
+  overflow: hidden;
 }
 .page-hero::before {
   content: '';
   position: absolute; inset: 0;
-  background: rgba(8,18,34,0.82);
+  background: linear-gradient(
+    to right,
+    rgba(8,18,34,0.85) 0%,
+    rgba(8,18,34,0.60) 45%,
+    rgba(8,18,34,0.20) 70%,
+    transparent 100%
+  );
   z-index: 0;
 }
 .page-hero-inner { max-width: var(--max-w); margin: 0 auto; position: relative; z-index: 1; }
 .page-hero .service-num { display: block; font-family: var(--font-display); font-size: 13px; letter-spacing: 0.18em; color: var(--cyan); margin-bottom: 16px; }
-.page-hero h1 { font-family: var(--font-display); font-size: clamp(36px, 6vw, 64px); font-weight: 800; color: var(--white); text-transform: uppercase; line-height: 1.05; margin-bottom: 20px; text-shadow: 0 2px 16px rgba(0,0,0,0.5); }
-.page-hero p { font-size: 18px; color: rgba(232,237,243,0.85); max-width: 560px; line-height: 1.7; }
+.page-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 6vw, 64px);
+  font-weight: 800; color: var(--white);
+  text-transform: uppercase; line-height: 1.05; margin-bottom: 20px;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.6);
+}
+.page-hero p { font-size: 18px; color: rgba(232,237,243,0.90); max-width: 560px; line-height: 1.7; text-shadow: 0 1px 8px rgba(0,0,0,0.5); }
 .service-detail-body { background: var(--deep); }
 .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; padding: var(--section-pad) 0; }
 .detail-points { display: flex; flex-direction: column; gap: 24px; }
@@ -362,7 +366,7 @@ a { color: inherit; text-decoration: none; }
 .detail-cta { margin-top: 48px; }
 .detail-intro { font-size: 16px; color: rgba(232,237,243,0.8); line-height: 1.75; margin-bottom: 32px; }
 
-/* ── CONTACT PAGE ── */
+/* ── CONTACT ── */
 .contact-section { background: var(--deep); padding: var(--section-pad) 24px; }
 .contact-grid { max-width: var(--max-w); margin: 0 auto; display: grid; grid-template-columns: 1fr 1.4fr; gap: 64px; }
 .contact-info { display: flex; flex-direction: column; gap: 28px; }
@@ -389,7 +393,7 @@ a { color: inherit; text-decoration: none; }
 .form-field textarea { resize: vertical; min-height: 140px; }
 .form-submit { margin-top: 8px; }
 
-/* ── PROJECTS PAGE ── */
+/* ── PROJECTS ── */
 .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .project-card {
   background: rgba(17,34,64,0.8);
@@ -398,7 +402,7 @@ a { color: inherit; text-decoration: none; }
   transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
 }
 .project-card:hover { border-color: var(--cyan); transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,201,212,0.12); }
-.project-img { width: 100%; height: 220px; background: rgba(10,22,40,0.8); display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 13px; letter-spacing: 0.1em; }
+.project-img { width: 100%; height: 220px; background: rgba(10,22,40,0.8); display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 13px; }
 .project-body { padding: 24px; }
 .project-meta { font-size: 12px; color: var(--cyan); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; }
 .project-body h3 { font-family: var(--font-display); font-size: 20px; color: var(--white); margin-bottom: 10px; }
@@ -419,9 +423,8 @@ a { color: inherit; text-decoration: none; }
   }
   .nav-links.open { display: flex; }
   .nav-toggle { display: block; }
-  .hero::before {
-    background: linear-gradient(rgba(8,18,34,0.85) 0%, rgba(8,18,34,0.70) 100%);
-  }
+  .hero::before { background: rgba(8,18,34,0.75); }
+  .page-hero::before { background: rgba(8,18,34,0.75); }
   .about-grid { grid-template-columns: 1fr; gap: 40px; }
   .services-grid { grid-template-columns: 1fr; }
   .clients-grid { grid-template-columns: 1fr 1fr; }
