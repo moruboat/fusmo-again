@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact — Fusion Mobility Inc.</title>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <header class="site-header" id="site-header">
+    <nav class="nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-main">FUSION MOBILITY</span>
+        <span class="logo-sub">INC.</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu">&#9776;</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="index.html#clients">Clients</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <div class="section-label">Reach Out</div>
+      <h1>Contact Us</h1>
+      <p>Ready to discuss a project or need more information? We respond within one business day.</p>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <div class="contact-grid">
+
+      <div class="contact-info">
+        <div class="contact-block">
+          <strong>Phone</strong>
+          <p><a href="tel:+821091236157">+82-10-9123-6157</a></p>
+        </div>
+        <div class="contact-block">
+          <strong>Email</strong>
+          <p><a href="mailto:fusmokorea@gmail.com">fusmokorea@gmail.com</a></p>
+        </div>
+        <div class="contact-block">
+          <strong>Korea Office</strong>
+          <p>부산광역시 강서구 생곡산단2로 40<br/>ALU FAB SHOP</p>
+        </div>
+        <div class="contact-block">
+          <strong>Philippines Boatyard</strong>
+          <p>Buyong Maribago, Lapu-Lapu 6015<br/>Cebu, Philippines</p>
+        </div>
+      </div>
+
+      <!-- Formspree form — replace YOUR_FORM_ID with your actual Formspree ID -->
+      <form
+        class="contact-form"
+        action="https://formspree.io/f/YOUR_FORM_ID"
+        method="POST"
+      >
+        <div class="form-row">
+          <div class="form-field">
+            <label for="name">Name <span style="color:var(--orange)">*</span></label>
+            <input type="text" id="name" name="name" required placeholder="Your name"/>
+          </div>
+          <div class="form-field">
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company" placeholder="Company name"/>
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="email">Email <span style="color:var(--orange)">*</span></label>
+          <input type="email" id="email" name="email" required placeholder="your@email.com"/>
+        </div>
+        <div class="form-field">
+          <label for="service">Service of Interest</label>
+          <select id="service" name="service">
+            <option value="">Select a service...</option>
+            <option>01 — Project Management</option>
+            <option>02 — Refit &amp; Repair</option>
+            <option>03 — 3rd Party Inspection</option>
+            <option>04 — Equipment Import/Export</option>
+            <option>05 — Design &amp; Engineering</option>
+            <option>06 — R&amp;D Collaboration</option>
+            <option>07 — US Navy MRO Support</option>
+            <option>08 — Skilled Workforce Deployment</option>
+            <option>General Enquiry</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="message">Message <span style="color:var(--orange)">*</span></label>
+          <textarea id="message" name="message" required placeholder="Tell us about your project or enquiry..."></textarea>
+        </div>
+        <div class="form-submit">
+          <button type="submit" class="btn btn-primary">Send Enquiry →</button>
+        </div>
+      </form>
+
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <span class="logo-main">FUSION MOBILITY</span><span class="logo-sub"> INC.</span>
+        <p>Connecting Marine Excellence</p>
+      </div>
+      <div class="footer-col">
+        <strong>Services</strong>
+        <ul>
+          <li><a href="services/01-project-management.html">Project Management</a></li>
+          <li><a href="services/02-refit-repair.html">Refit &amp; Repair</a></li>
+          <li><a href="services/03-inspection.html">3rd Party Inspection</a></li>
+          <li><a href="services/04-equipment.html">Equipment Trade</a></li>
+          <li><a href="services/05-design.html">Design &amp; Engineering</a></li>
+          <li><a href="services/06-rnd.html">R&amp;D</a></li>
+          <li><a href="services/07-usnav.html">US Navy MRO</a></li>
+          <li><a href="services/08-workforce.html">Workforce Deployment</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <strong>Contact</strong>
+        <ul>
+          <li>+82-10-9123-6157</li>
+          <li><a href="mailto:fusmokorea@gmail.com">fusmokorea@gmail.com</a></li>
+          <li>부산광역시 강서구 생곡산단2로 40</li>
+          <li>Buyong Maribago, Lapu-Lapu 6015, PH</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Fusion Mobility Inc. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
